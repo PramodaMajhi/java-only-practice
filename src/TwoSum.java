@@ -22,11 +22,12 @@ public class TwoSum {
 
 		int nums[] = { 4, 5, 3, 7, 9, -5 };
 		// Arrays.sort(nums);
-		// int indexArr[] = twoSumHashMap(nums, 9);
-		int indexArr[] = twoSumBinary(nums, 9);
+		 int indexArr[] = twoSumHashMap(nums, 9);
+		// int indexArr[] = twoSumBinary(nums, 9);
 		
 		
-		  for (int i = 0; i < indexArr.length; i++) { System.out.println(indexArr[i]);
+		  for (int i = 0; i < indexArr.length; i++) { 
+			  System.out.print(indexArr[i] + " ");
 		  }
 		 
 
@@ -76,7 +77,9 @@ public class TwoSum {
 		  }
 		int count = 0;
 		for (int i = 0; i < a.length; i++) {
-            int j = Arrays.binarySearch(a, -a[i]);
+			int key = -a[i];
+			
+            int j = Arrays.binarySearch(a, key);
             if (j > i) 
             	return new int[] {i,j};
             
