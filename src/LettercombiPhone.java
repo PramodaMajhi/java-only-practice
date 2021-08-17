@@ -17,7 +17,9 @@ import javax.print.attribute.standard.OutputDeviceAssigned;
 	
 	*
 * Approach 1: Backtracking
-* Backtracking is an algorithm for finding all solutions by exploring all potential candidates. If the solution candidate turns to be not a solution (or at least not the last one), backtracking algorithm discards it by making some changes on the previous step, i.e. backtracks and then try again.
+* Backtracking is an algorithm for finding all solutions by exploring all potential candidates. 
+* If the solution candidate turns to be not a solution (or at least not the last one), 
+* backtracking algorithm discards it by making some changes on the previous step, i.e. backtracks and then try again.
 
  Here is a backtrack function backtrack(combination, next_digits) which takes as arguments an ongoing letter combination and the next digits to check.
 
@@ -105,8 +107,7 @@ public class LettercombiPhone {
 		return result;
 	}
 
-	public static void letterCombiRecursive(List<String> result, String digits, String current, int index,
-			String[] mapping) {
+	public static void letterCombiRecursive(List<String> result, String digits, String current, int index, String[] mapping) {
 
 		if (index == digits.length()) {
 			result.add(current);

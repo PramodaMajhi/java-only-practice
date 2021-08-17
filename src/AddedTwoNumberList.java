@@ -43,6 +43,7 @@ public class AddedTwoNumberList {
 			System.out.print("  " + x.data);
 		}
 		
+		// calling the function
 		Node rs = addTwoList(head1, head2);
 		
 		System.out.println("");
