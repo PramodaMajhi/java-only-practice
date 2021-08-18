@@ -1,5 +1,4 @@
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -53,14 +52,29 @@ public class LettercombiPhone {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		 List<String> result = phoneLetters("23");
-		 //  letterCombs("23");
+		List<String> result = phoneLetters("23");
+		// letterCombs("23");
 		// letterCombinations("23");
 		for (String letter : result) {
 			System.out.println(letter);
 		}
 
 	}
+
+	/**
+	 * Time Complexity The numbers in input string can represent strings of length
+	 * of 3 or 4. Let m be the number of digits that map to 3 letters and n be the
+	 * number of digits that map to 4 letters. Thus, the overall time complexity
+	 * will be O(3m × 4n).
+	 * 
+	 * Space Complexity The recursive call will use the stack memory equal to O(3m ×
+	 * 4n) and this will be the space complexity.
+	 * 
+	 * 
+	 * 
+	 * @param combination
+	 * @param next_digits
+	 */
 
 	public static void backtrack(String combination, String next_digits) {
 
@@ -107,7 +121,8 @@ public class LettercombiPhone {
 		return result;
 	}
 
-	public static void letterCombiRecursive(List<String> result, String digits, String current, int index, String[] mapping) {
+	public static void letterCombiRecursive(List<String> result, String digits, String current, int index,
+			String[] mapping) {
 
 		if (index == digits.length()) {
 			result.add(current);
@@ -123,7 +138,7 @@ public class LettercombiPhone {
 
 	public static List<String> phoneLetters(String number) {
 		List<String> answer = new ArrayList<String>();
-		answer.add("");
+		answer.add(""); // empty string for first removal should not throw exceptions
 
 		String[] phone = new String[] { "0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
 

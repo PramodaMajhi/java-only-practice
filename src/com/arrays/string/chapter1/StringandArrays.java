@@ -1,4 +1,4 @@
-package com.arrays.string;
+package com.arrays.string.chapter1;
 
 
 
@@ -7,8 +7,8 @@ public class StringandArrays {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// System.out.println(reverseAString("Hello"));
-		// System.out.println(isUniqueCharacters("zabca"));
-		System.out.println(reverseUsingHalfway("abc"));
+		 System.out.println(isUniqueCharacters("zabca"));
+		//System.out.println(reverseUsingHalfway("abc"));
 
 	}
 	/* Q1: Reverse a string
@@ -62,6 +62,7 @@ public class StringandArrays {
 		
 		for(int i=0; i <str.length(); i++) {
 			int val = str.charAt(i);
+			System.out.println(val+ " from char at " +i);
 			if(bol[val]) { // already found this char in string.
 				return false;
 			}

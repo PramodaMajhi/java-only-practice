@@ -1,4 +1,4 @@
-package com.arrays.string;
+package com.arrays.string.chapter1;
 
 import java.util.Scanner;
 
@@ -42,7 +42,7 @@ public class RotateArray90Degree {
 	 * 
 	 * Let MM be the number of cells in the matrix.
 	 * 
-	 * Time complexity : O(n2 square of 2)  touched all elements n2
+	 * Time complexity : O(n^2)  touched all elements n^2
 	 * 
 	 * Space complexity : \mathcal{O}(1)O(1) because we do not use any other
 	 * additional data structures.
