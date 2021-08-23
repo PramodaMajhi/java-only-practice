@@ -70,6 +70,7 @@ public class TwoSum {
 	/// Using binary search
 
 	public static int[] twoSumBinary(int a[], int target) {
+		// Need to take a look at later
 		// int a[] = { 4, 5, 3, 7, 9, -5 };
 		Arrays.sort(a);
 		for (int i = 0; i < a.length; i++) {
