@@ -22,8 +22,8 @@ public class TwoSum {
 
 		int nums[] = { 4, 5, 3, 7, 9, -5 };
 		// Arrays.sort(nums);
-		 int indexArr[] = twoSumHashMap(nums, 9);
-		// int indexArr[] = twoSumBinary(nums, 9);
+		// int indexArr[] = twoSumHashMap(nums, 9);
+		int indexArr[] = twoSumBinary(nums, 9);
 		
 		
 		  for (int i = 0; i < indexArr.length; i++) { 
