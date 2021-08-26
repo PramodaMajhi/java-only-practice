@@ -43,9 +43,9 @@ public class WordIsSubStringOfOther {
 		
 		if(s1.length() == s2.length() && s1.length() > 0) {
 			
-			String s1s2 = s1 + s2 ;
+			String s1s1 = s1 + s1 ;
 			
-			return isSubstrings(s1s2, s2);
+			return isSubstrings(s1s1, s2);
 		}
 		return false;
 		
