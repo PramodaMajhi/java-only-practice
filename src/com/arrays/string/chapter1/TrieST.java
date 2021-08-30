@@ -1,25 +1,27 @@
 package com.arrays.string.chapter1;
+
+import java.util.ArrayList;
+
 /**
- * A String symbol table for extended ASCII string implemented using a 256-way trie.
+ * A String symbol table for extended ASCII string implemented using a 256-way
+ * trie.
  * 
- *Search hit. Need to examine all L characters for equality
+ * Search hit. Need to examine all L characters for equality
  *
- *Search Miss
- *	. could have mismatch on first character
- *	. Typical case: examine only a few characters(sublinear)
+ * Search Miss . could have mismatch on first character . Typical case: examine
+ * only a few characters(sublinear)
  *
- *Space: 
- *		R null links at each leaf.
- *		(but sublinear space possible if many short string share common prefixes)
+ * Space: R null links at each leaf. (but sublinear space possible if many short
+ * string share common prefixes)
  *
- *Bottom line. fast search hit and even faster search miss, but wastes space.
+ * Bottom line. fast search hit and even faster search miss, but wastes space.
  *
- *Goal: Design a data structure to perform efficient spell checking.
+ * Goal: Design a data structure to perform efficient spell checking.
  */
 
 public class TrieST<Value> {
 
-	private static final int R = 256; // extended ASCII
+	private static final int R = 128; // 256; // extended ASCII
 
 	private Node root; // root of trie
 	private int n; // number of keys in trie
@@ -41,7 +43,7 @@ public class TrieST<Value> {
 	 * given key id the key is in symbol table and {@code null} if the key is not in
 	 * the symbol table.
 	 * 
-	 * if the value is null, this effectively delets the key from symbol table.
+	 * if the value is null, this effectively deletes the key from symbol table.
 	 */
 
 	public Value get(String key) {
@@ -153,17 +155,132 @@ public class TrieST<Value> {
 			char c = key.charAt(d);
 			x.next[c] = delete(x.next[c], key, d + 1);
 		}
+		
+		
 		// remove subtrie rooted at x if it is completely empty
 		if (x.val != null) {
 			return x;
 		}
-
 		for (int c = 0; c < R; c++) {
 			if (x.next[c] != null) {
 				return x;
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * Returns all keys in the symbol table as an Iterable. To iterate over all of
+	 * the keys in the symbol table named. use the foreach notation:
+	 * {@code for (Key key : st.keys())}. return all keys in the symbol table as an
+	 * Iterable.
+	 */
+
+	public Iterable<String> keys() {
+		return keysWithPrefix("");
+	}
+
+	/**
+	 * Returns all of the keys in the set that start with {@code prefix}.
+	 * 
+	 * @param prefix the prefix
+	 * @return all of the keys in the set that start with {@code prefix}, as an
+	 *         iterable
+	 */
+
+	public Iterable<String> keysWithPrefix(String prefix) {
+		ArrayList<String> results = new ArrayList<String>();
+
+		Node x = get(root, prefix, 0);
+
+		collect(x, new StringBuilder(prefix), results);
+
+		return results;
+	}
+
+	private void collect(Node x, StringBuilder prefix, ArrayList<String> results) {
+		if (x == null) {
+			return;
+		}
+
+		if (x.val != null) {
+			results.add(prefix.toString());
+		}
+		for (char c = 0; c < R; c++) {
+			prefix.append(c);
+			collect(x.next[c], prefix, results);
+			prefix.deleteCharAt(prefix.length() - 1);
+		}
+
+	}
+
+	/**
+	 * Returns all of the keys in the symbol table that match 
+	 * where '.' is interpreted as wild card 
+	 * character. 
+	 * 
+	 **
+	 * all the keys in the symbol table that match as as iterable 
+	 * where . is treated as a wild card character. 
+	 */
+	
+	
+	public Iterable<String> keysThatMatch(String pattern) {
+		
+		ArrayList<String> results = new ArrayList<String>();
+		collect(root, new StringBuilder(), pattern, results);
+		return results;
+	}
+
+	public void collect(Node x, StringBuilder prefix, String pattern, ArrayList<String> results) {
+
+		if (x == null)
+			return;
+		int d = prefix.length();
+		if (d == pattern.length() && x.val != null) {
+			results.add(prefix.toString());
+		}
+
+		if (d == pattern.length()) {
+			return;
+		}
+
+		char c = pattern.charAt(d);
+		
+		if (c == '.') {
+			for (char ch = 0; ch < R; ch++) {
+				prefix.append(ch);
+				collect(x.next[ch], prefix, pattern, results);
+				prefix.deleteCharAt(prefix.length() - 1);
+			}
+		} else {
+			prefix.append(c);
+			collect(x.next[c], prefix, pattern, results);
+			prefix.deleteCharAt(prefix.length() - 1);
+		}
+
+	}
+
+	public static void main(String args[]) {
+		
+		// Build symbol table
+		
+		TrieST<String> st = new TrieST<String>();
+		st.put("a","0");
+
+		// st.put("ape", "1");
+		
+		for(String key: st.keys()) {
+			System.out.println(key + " " +st.get(key));
+		}
+//		st.delete("a");
+//		
+//		for(String key: st.keys()) {
+//			System.out.println(key + " " +st.get(key));
+//		}
+//		
+		for (String s : st.keysWithPrefix("a"))
+            System.out.println(s);
 	}
 
 }

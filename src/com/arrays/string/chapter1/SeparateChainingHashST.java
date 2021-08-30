@@ -168,5 +168,17 @@ public class SeparateChainingHashST<Key, Value> {
 		return (Iterable<Key>) queue;
 	}
 	
+	public static void main(String args[]) {
+		SeparateChainingHashST<String, Integer> st  = new SeparateChainingHashST<String, Integer>();
+		st.put("a", 1);
+		st.put("b", 2);
+		st.delete("b");
+		
+		 for(String s : st.keys()) {
+			 System.out.println(st.get(s));
+		 }
+		
+	}
+	
 }
 	
