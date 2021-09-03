@@ -16,7 +16,9 @@ import java.util.ArrayList;
  *
  * Bottom line. fast search hit and even faster search miss, but wastes space.
  *
- * Goal: Design a data structure to perform efficient spell checking.
+ * 
+ *Goal: Design a data structure to perform efficient spell checking.
+ *	Solution: Build 26-way trie (key=word, value = bit)
  */
 
 public class TrieST<Value> {
@@ -266,13 +268,16 @@ public class TrieST<Value> {
 		// Build symbol table
 		
 		TrieST<String> st = new TrieST<String>();
-		st.put("a","0");
-
+		st.put("apple","0");
+		st.put("grape","1");
+		st.put("ape","2");
+		st.put("she","3");
+		st.put("santosh","4");
 		// st.put("ape", "1");
 		
-		for(String key: st.keys()) {
-			System.out.println(key + " " +st.get(key));
-		}
+//		for(String key: st.keys()) {
+//			System.out.println(key + " " +st.get(key));
+//		}
 //		st.delete("a");
 //		
 //		for(String key: st.keys()) {
