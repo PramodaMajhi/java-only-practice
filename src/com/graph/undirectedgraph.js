@@ -18,16 +18,27 @@ undirectedPath = (edges, src, dist) => {
     return hasPath(graph, src, dist, new Set());
 }
 const hasPath = (graph, src, dist, visited) => {
-    if (src == dist) return true;
-    if (visited.has(src)) return false;
-    visited.add(src);
-    for (const neighbor of graph[src]) {
-        if (hasPath(graph, src, dist, visited) == true) {
+    // Set to keep track of whether we visited or not 
+    // if we visited then don't revisit again.
+    if (src == dist) 
+        return true;
+    if (visited.has(src))
+        return false;
+        visited.add(src);
+    for (const neighbor of graph[src]) { // another base when hashmap is empty
+        if (hasPath(graph, neighbor, dist, visited) == true) {
             return true;
         }
     }
     return false;
 }
+/**
+ * 
+ * @param {*} edges 
+ * @returns 
+ * This a hashmap where key is node and array of edges
+ * structure to work on graph.
+ */
 const buildGraph = (edges) => {
     const graph = {};
     for (const edge of edges) {
@@ -48,6 +59,6 @@ const edges = [
     ['o', 'n']
 ];
 
-const haspath = undirectedPath(edges, 'k', 'o'); // -> true
+const haspath = undirectedPath(edges, 'j', 'm'); // -> true
 
 console.log(haspath);
