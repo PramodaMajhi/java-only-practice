@@ -1,3 +1,4 @@
+package mixedproblem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -65,9 +66,9 @@ public class LettercombiPhone {
 	 * Time Complexity The numbers in input string can represent strings of length
 	 * of 3 or 4. Let m be the number of digits that map to 3 letters and n be the
 	 * number of digits that map to 4 letters. Thus, the overall time complexity
-	 * will be O(3m × 4n).
+	 * will be O(3m ï¿½ 4n).
 	 * 
-	 * Space Complexity The recursive call will use the stack memory equal to O(3m ×
+	 * Space Complexity The recursive call will use the stack memory equal to O(3m ï¿½
 	 * 4n) and this will be the space complexity.
 	 * 
 	 * 

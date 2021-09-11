@@ -1,3 +1,4 @@
+package mixedproblem;
 
 public class Apple {
 	 int price =10;

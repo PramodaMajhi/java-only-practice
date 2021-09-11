@@ -1,3 +1,4 @@
+package mixedproblem;
 
 public class Selling extends Apple{
 	
