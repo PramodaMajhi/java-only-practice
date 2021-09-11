@@ -16,7 +16,10 @@ public class SumOfNaturalNumber {
 		
 		int result = recursiveSummation(5);
 		System.out.println(result);
+		
 
 	}
+
+
 
 }

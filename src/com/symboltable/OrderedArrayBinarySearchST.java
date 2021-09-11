@@ -2,7 +2,7 @@
  * Symbol table implementation with binary search
  * class represent an ordered symbol table of generic key-value pairs
  */
-
+import java.util.NoSuchElementException;
  public class OrderedArrayBinarySearchST<Key extends Comparable<Key>, Value> {
     private static final int INIT_CAPACITY  = 2;
     private Key[] keys;
@@ -63,7 +63,31 @@ public int rank(Key key) {
     return lo;
 
 }
+/***************************************************************************
+    *  Ordered symbol table methods.
+    ***************************************************************************/
 
+   /**
+     * Returns the smallest key in this symbol table.
+     *
+     * @return the smallest key in this symbol table
+     * @throws NoSuchElementException if this symbol table is empty
+     */
+    public Key min() {
+        if (isEmpty()) throw new NoSuchElementException("called min() with empty symbol table");
+        return keys[0]; 
+    }
+
+    /**
+     * Returns the largest key in this symbol table.
+     *
+     * @return the largest key in this symbol table
+     * @throws NoSuchElementException if this symbol table is empty
+     */
+    public Key max() {
+        if (isEmpty()) throw new NoSuchElementException("called max() with empty symbol table");
+        return keys[n-1];
+    }
 /**
  * Inserts the specified key-value pair into the symbol table, overwriting the old value 
  * with thew new value if the symbol table already contains the specified key.
