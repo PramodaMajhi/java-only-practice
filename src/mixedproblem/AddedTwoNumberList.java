@@ -62,25 +62,29 @@ public class AddedTwoNumberList {
 	/*
 	 * Complexity Analysis
 	 * 
-	 * Time complexity : O(\max(m, n))O(max(m,n)). Assume that mm and nn represents
+	 * Time complexity : O(max(m, n)) O(max(m,n)). Assume that mm and nn represents
 	 * the length of l1l1 and l2l2 respectively, the algorithm above iterates at
-	 * most \max(m, n)max(m,n) times.
+	 * most max(m, n) max(m,n) times.
 	 * 
-	 * Space complexity : O(\max(m, n))O(max(m,n)). The length of the new list is at
-	 * most \max(m,n) + 1max(m,n)+1
+	 * Space complexity : O(max(m, n))O(max(m,n)). The length of the new list is at
+	 * most  max(m,n) + 1max(m,n)+1
+	 * 
+	 * 
+	 * eg L1 = 2 -> 5
+	 * 	  L2 = 3 -> 7
+	 * output: 5 -> 2 -> 1
 	 */
 
 	public static Node addTwoList(Node first, Node second) {
 
 		Node res = null;
-		Node prev = null;
 		Node temp = null;
 		int carry = 0, sum;
 
 		while (first != null || second != null) {
 
 			sum = carry + (first != null ? first.data : 0) + (second != null ? second.data : 0);
-			carry = (sum >= 10) ? 1 : 0;
+			carry = (sum >= 10) ? 1 : 0; // list contain single digit
 			sum = sum % 10;
 
 			temp = new Node(sum);
@@ -91,7 +95,6 @@ public class AddedTwoNumberList {
 				res.next = temp;
 			}
 
-			prev = temp;
 
 			if (first != null) {
 				first = first.next;

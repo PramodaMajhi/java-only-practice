@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.print.attribute.standard.OutputDeviceAssigned;
+
 
 /*
  * Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
@@ -53,8 +53,8 @@ public class LettercombiPhone {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		List<String> result = phoneLetters("23");
-		// letterCombs("23");
+		// List<String> result = phoneLetters("23");
+		List<String> result = letterCombs("23");
 		// letterCombinations("23");
 		for (String letter : result) {
 			System.out.println(letter);
@@ -145,7 +145,7 @@ public class LettercombiPhone {
 
 		for (int i = 0; i < number.length(); i++) {
 
-			int workingNumber = Character.getNumericValue(number.charAt(i));
+			int workingNumber = Character.getNumericValue(number.charAt(i)); // make sure converting into int.
 
 			while (answer.get(0).length() == i) {
 				String top = answer.remove(0);
