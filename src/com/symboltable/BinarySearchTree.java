@@ -341,6 +341,22 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
     public void delete(Key key) {
         root = delete(root, key);
     }
+    /**
+     *      s
+     *     / \ 
+     *    E   X
+     *   / \  /\ 
+     *  A   R
+       / \  / \ 
+    null  C H 
+           / \ 
+                M 
+                /\
+       
+     * @param root
+     * @param key
+     * @return
+     */
 
     public Node delete(Node root, Key key) {
         if (root == null) {
@@ -352,6 +368,11 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
         } else if (cmp > 0) {
             root.right = delete(root.right, key);
         } else {
+            /**
+             * So we search for the key, if it's got no right child we're fine, we just
+             * return x.left and that the handles both cases zero and one.
+             */
+            // This is hibbard deletion 
             if (root.right == null)
                 return root.left;
             if (root.left == null)
@@ -408,70 +429,90 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
     /**
      * Does this symbol table contain the given key?
      *
-     * @param  key the key
+     * @param key the key
      * @return {@code true} if this symbol table contains {@code key} and
      *         {@code false} otherwise
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public boolean contains(Key key) {
-        if (key == null) throw new IllegalArgumentException("argument to contains() is null");
+        if (key == null)
+            throw new IllegalArgumentException("argument to contains() is null");
         return get(key) != null;
     }
 
     /**
-     * Returns the largest key in the symbol table less than or equal to {@code key}.
+     * Returns the largest key in the symbol table less than or equal to
+     * {@code key}.
      *
-     * @param  key the key
+     * @param key the key
      * @return the largest key in the symbol table less than or equal to {@code key}
-     * @throws NoSuchElementException if there is no such key
+     * @throws NoSuchElementException   if there is no such key
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public Key floor(Key key) {
-        if (key == null) throw new IllegalArgumentException("argument to floor() is null");
-        if (isEmpty()) throw new NoSuchElementException("calls floor() with empty symbol table");
+        if (key == null)
+            throw new IllegalArgumentException("argument to floor() is null");
+        if (isEmpty())
+            throw new NoSuchElementException("calls floor() with empty symbol table");
         Node x = floor(root, key);
-        if (x == null) throw new NoSuchElementException("argument to floor() is too small");
-        else return x.key;
-    } 
+        if (x == null)
+            throw new NoSuchElementException("argument to floor() is too small");
+        else
+            return x.key;
+    }
 
     private Node floor(Node x, Key key) {
-        if (x == null) return null;
+        if (x == null)
+            return null;
         int cmp = key.compareTo(x.key);
-        if (cmp == 0) return x;
-        if (cmp <  0) return floor(x.left, key);
-        Node t = floor(x.right, key); 
-        if (t != null) return t;
-        else return x; 
-    } 
+        if (cmp == 0)
+            return x;
+        if (cmp < 0)
+            return floor(x.left, key);
+        Node t = floor(x.right, key);
+        if (t != null)
+            return t;
+        else
+            return x;
+    }
 
     /**
-     * Returns the smallest key in the symbol table greater than or equal to {@code key}.
+     * Returns the smallest key in the symbol table greater than or equal to
+     * {@code key}.
      *
-     * @param  key the key
-     * @return the smallest key in the symbol table greater than or equal to {@code key}
-     * @throws NoSuchElementException if there is no such key
+     * @param key the key
+     * @return the smallest key in the symbol table greater than or equal to
+     *         {@code key}
+     * @throws NoSuchElementException   if there is no such key
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public Key ceiling(Key key) {
-        if (key == null) throw new IllegalArgumentException("argument to ceiling() is null");
-        if (isEmpty()) throw new NoSuchElementException("calls ceiling() with empty symbol table");
+        if (key == null)
+            throw new IllegalArgumentException("argument to ceiling() is null");
+        if (isEmpty())
+            throw new NoSuchElementException("calls ceiling() with empty symbol table");
         Node x = ceiling(root, key);
-        if (x == null) throw new NoSuchElementException("argument to floor() is too large");
-        else return x.key;
+        if (x == null)
+            throw new NoSuchElementException("argument to floor() is too large");
+        else
+            return x.key;
     }
 
     private Node ceiling(Node x, Key key) {
-        if (x == null) return null;
+        if (x == null)
+            return null;
         int cmp = key.compareTo(x.key);
-        if (cmp == 0) return x;
-        if (cmp < 0) { 
-            Node t = ceiling(x.left, key); 
-            if (t != null) return t;
-            else return x; 
-        } 
-        return ceiling(x.right, key); 
-    } 
-
+        if (cmp == 0)
+            return x;
+        if (cmp < 0) {
+            Node t = ceiling(x.left, key);
+            if (t != null)
+                return t;
+            else
+                return x;
+        }
+        return ceiling(x.right, key);
+    }
 
     public static void main(String args[]) {
         BinarySearchTree<String, Integer> bst = new BinarySearchTree<String, Integer>();
@@ -491,7 +532,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 
         for (String s : bst.keys())
             System.out.println(s + " " + bst.get(s));
-           bst.delete("E");
+        bst.delete("E");
         // bst.delete("R");
         // bst.delete("S");
         // bst.delete("X");

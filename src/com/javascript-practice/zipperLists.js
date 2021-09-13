@@ -9,5 +9,7 @@
  * You may assume that both input lists are non-empty.
  */
 const zipperLists = (head1, head2) => {
-
+ console.log("hello");
 }
+
+zipperLists("a", "b");

@@ -85,7 +85,7 @@ public class TrieST<Value> {
 
 	public Node put(Node x, String key, Value val, int d) {
 
-		if (x == null) { // root node is not null because we created a new object
+		if (x == null) { 
 			x = new Node();
 		}
 		if (d == key.length()) { // our length is not 0 because we have key to add.
@@ -283,7 +283,7 @@ public class TrieST<Value> {
 //		for(String key: st.keys()) {
 //			System.out.println(key + " " +st.get(key));
 //		}
-//		
+	
 		for (String s : st.keysWithPrefix("a"))
             System.out.println(s);
 	}
