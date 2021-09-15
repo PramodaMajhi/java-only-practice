@@ -23,7 +23,6 @@ const search = (numbers, low, high, target) => {
 
         let mid = low + Math.floor((high - low) / 2);
         if (target < numbers[mid]) {
-
             return search(numbers, low, mid - 1, target);;
         } else if (target > numbers[mid]) {
             return search(numbers, mid + 1, high, target)
@@ -35,7 +34,8 @@ const search = (numbers, low, high, target) => {
     return -1;
 }
 
-// const position = binarySearch([0, 1, 2, 3, 4, 5, 6, 7, 8], 6); // -> 6
-const position = binarySearch([0, 6, 8, 12, 16, 19, 20, 24, 28], 27); // -> -1
+ const position = binarySearch([0, 6, 8, 12, 16, 19, 20, 28], 12); // -> 2
+// const position = binarySearch([0, 6, 8, 12, 16, 19, 20, 24, 28], 27); // -> -1
 
 console.log(position);
+
