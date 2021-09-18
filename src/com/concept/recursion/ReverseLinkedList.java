@@ -21,11 +21,14 @@ public class ReverseLinkedList {
         if (node == null || node.next == null) {
             return node;
         }
-
+        /**
+         *  1 -> 2 -> 3 -> 4 -> 5 -> 6
+         *  					node <-6 
+         */
         Node p = reverseList(node.next);
-        node.next.next = node;
-        node.next = null;
-        return p;
+        node.next.next = node; // node <- 6
+        node.next = null; // remove cyclic dependencies 
+        return p; // return head node.
 
     }
 
