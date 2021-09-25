@@ -1,4 +1,3 @@
-// package com.java-practice.binaryTree.chapter4;
 
 /**
  * Implement a function to check binary tree is a binary search tree.

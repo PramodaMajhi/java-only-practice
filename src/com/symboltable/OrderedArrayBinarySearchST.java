@@ -1,3 +1,5 @@
+package com.symboltable;
+
 /** 
  * Symbol table implementation with binary search
  * class represent an ordered symbol table of generic key-value pairs

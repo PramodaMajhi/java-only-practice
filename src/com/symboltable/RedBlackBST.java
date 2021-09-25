@@ -1,3 +1,5 @@
+package com.symboltable;
+
 /**
  * we had a single temporary four note and we split it up into a two, two note
  * not connected to a four note. And then, so that's the case when it's smaller.

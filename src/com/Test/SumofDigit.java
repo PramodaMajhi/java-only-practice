@@ -1,3 +1,5 @@
+package com.Test;
+
 public class SumofDigit {
     public static void main(String args[]) {
         sumOfOneDigit(12);

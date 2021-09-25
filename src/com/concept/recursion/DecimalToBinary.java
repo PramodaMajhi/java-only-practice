@@ -1,3 +1,5 @@
+package com.concept.recursion;
+
 public class DecimalToBinary {
     
     public static String findBinary(int decimal, String result) {

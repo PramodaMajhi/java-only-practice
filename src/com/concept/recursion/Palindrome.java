@@ -1,3 +1,5 @@
+package com.concept.recursion;
+
 public class Palindrome {
     public static boolean isPalindrome(String input) {
         if(input.length() == 0 || input.length() == 1) {

@@ -1,3 +1,5 @@
+package com.symboltable;
+
 
 /**
  * The class represents an ordered symbol table of generic key-value pairs. This
