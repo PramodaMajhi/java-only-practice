@@ -352,14 +352,37 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
        / \  / \ 
     null  C H 
            / \ 
-                M 
-                /\
+              M 
+             / \
        
      * @param root
      * @param key
      * @return
      */
 
+    /**
+     * Delete the minimum and maximum. For delete the minimum, we go left until finding a node that that 
+     * has a null left link and then replace the link to that node by its right link. The symmetric method 
+     * works for delete the maximum.
+	   Delete. We can proceed in a similar manner to delete any node that has one child (or no children), 
+	   but what can we do to delete a node that has two children? We are left with two links, 
+	   but have a place in the parent node for only one of them. 
+	   An answer to this dilemma, first proposed by T. Hibbard in 1962, 
+	   is to delete a node x by replacing it with its successor. 
+	   Because x has a right child, its successor is the node with the smallest key in its right subtree. 
+	   The replacement preserves order in the tree because there are no keys between x.key and the successor's key. 
+	   We accomplish the task of replacing x by its successor in four (!) easy steps:
+	   Save a link to the node to be deleted in t
+	   Set x to point to its successor min(t.right).
+	   Set the right link of x (which is supposed to point to the BST containing 
+	   all the keys larger than x.key) to deleteMin(t.right), the link to the BST containing 
+	   all the keys that are larger than x.key after the deletion.
+	   Set the left link of x (which was null) to t.left (all the keys that are less than both 
+	   the deleted key and its successor).
+     * @param root
+     * @param key
+     * @return
+     */
     public Node delete(Node root, Key key) {
         if (root == null) {
             return null;

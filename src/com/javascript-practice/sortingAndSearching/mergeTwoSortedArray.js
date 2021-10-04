@@ -16,14 +16,14 @@ const mergeSortedArray = (a, b, countA, countB) => {
     while (lastElementOfB >= 0) {
         if (lastElementOfA >= 0 && a[lastElementOfA] > b[lastElementOfB]) {
 
-            a[mergeIndex] = a[lastElementOfA--];
+            a[mergeIndex--] = a[lastElementOfA--];
            // lastElementOfA --;
         }
         else {
-            a[mergeIndex] = b[lastElementOfB--];
+            a[mergeIndex--] = b[lastElementOfB--];
            // lastElementOfB --;
         }
-        mergeIndex--;
+     //   mergeIndex--;
     }
    
 

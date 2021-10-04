@@ -34,7 +34,7 @@ const search = (numbers, low, high, target) => {
     return -1;
 }
 
- const position = binarySearch([0, 6, 8, 12, 16, 19, 20, 28], 12); // -> 2
+ const position = binarySearch([0, 6, 8, 12, 16, 19, 20, 28], 8); // -> 2
 // const position = binarySearch([0, 6, 8, 12, 16, 19, 20, 24, 28], 27); // -> -1
 
 console.log(position);

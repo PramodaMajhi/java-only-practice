@@ -31,5 +31,5 @@ const fiboRecursive = (n) => {
 
 
 }
-console.log(fibo(7));
+console.log(fibo(70));
 // console.log(fiboRecursive(70));

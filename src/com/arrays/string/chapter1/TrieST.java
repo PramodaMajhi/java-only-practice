@@ -209,9 +209,13 @@ public class TrieST<Value> {
 			results.add(prefix.toString());
 		}
 		for (char c = 0; c < R; c++) {
+			System.out.print(c);
 			prefix.append(c);
+			System.out.print(prefix.toString());
+			System.out.println("--> " + x.next[c]);
 			collect(x.next[c], prefix, results);
 			prefix.deleteCharAt(prefix.length() - 1);
+			System.out.println(prefix.toString());
 		}
 
 	}

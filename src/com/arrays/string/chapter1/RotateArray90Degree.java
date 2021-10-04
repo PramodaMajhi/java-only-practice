@@ -84,7 +84,7 @@ public class RotateArray90Degree {
 		}
 	}
 	
-	// This is an another approach not working .. need to troubleshoot
+	// This is an another approach 
 	
 	/**
 	 * @param matrix

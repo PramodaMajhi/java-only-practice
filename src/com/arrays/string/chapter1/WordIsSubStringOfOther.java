@@ -3,7 +3,8 @@ package com.arrays.string.chapter1;
 /*
  * Assume you have a method isSustring which checks if one word is a substring another.
  * 
- * Given two strings, s1 and s2, write code to check if s2 a rotation of s1 using one call to isSubstring(i.g "waterbottle" is a rotation of "erbottlewat"
+ * Given two strings, s1 and s2, write code to check,
+ *  if s2 a rotation of s1 using one call to isSubstring(i.g "waterbottle" is a rotation of "erbottlewat"
  */
 
 public class WordIsSubStringOfOther {

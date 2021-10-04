@@ -28,7 +28,7 @@ public class ReverseLinkedList {
          *  					node <-6 
          */
         Node p = reverseList(node.next);
-        node.next.next = node; // node <- 6
+        node.next.next = node; // node <- 5 because base is node.next
         node.next = null; // remove cyclic dependencies 
         return p; // return head node.
 

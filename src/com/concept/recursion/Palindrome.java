@@ -13,6 +13,6 @@ public class Palindrome {
     }
 
     public static void main(String args[]) {
-        System.out.println(isPalindrome("hello"));
+        System.out.println(isPalindrome("16461"));
     }
 }
