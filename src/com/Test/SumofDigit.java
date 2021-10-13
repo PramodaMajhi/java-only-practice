@@ -1,11 +1,14 @@
 package com.Test;
 
+import java.util.Arrays;
+
 public class SumofDigit {
     public static void main(String args[]) {
-        sumOfOneDigit(12);
+
+		System.out.println(sumOfOneDigit(12));
     }
 
-    public static void sumOfOneDigit(int num) {
+    public static int sumOfOneDigit(int num) {
 		
 		int reminder = 0;
 		int sum = 0;
@@ -14,5 +17,6 @@ public class SumofDigit {
 		 sum = sum + reminder;
 		 num = num/10;
 		}
+		return sum;
 	}
 }

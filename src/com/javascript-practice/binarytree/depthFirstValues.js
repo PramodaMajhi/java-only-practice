@@ -54,7 +54,16 @@ c.right = f;
 //   b     c
 //  / \     \
 // d   e     f
+/**
+ * //   a
+//    /   \
+//   b     c
+//  / \     \
+// d   e     f
 
+depthFirstValues(a); 
+//    -> ['a', 'b', 'd', 'e', 'c', 'f']
+ */
 
 let values = depthFirstValues(a);
 console.log(values);

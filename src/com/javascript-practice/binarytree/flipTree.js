@@ -7,7 +7,32 @@
 Time: O(n)
 Space: O(n)
 
-*/
+/**
+ * //    a
+//    /    \
+//   b      c
+//  / \      \
+// d   e      f
+//    / \
+//    g  h
+
+flipTree(a); 
+
+//       a
+//    /    \
+//   c      b
+//  /     /   \
+// f     e    d
+//     /  \
+//    h    g
+
+Note: 
+(a) Inorder (Left, Root, Right) 
+(b) Preorder (Root, Left, Right) 
+(c) Postorder (Left, Right, Root)
+ */
+
+
 
 class Node {
 
