@@ -8,8 +8,8 @@ package com.symboltable;
  * {@code compareTo()} and method to compare two keys. It does not call either
  * {@code equals()} or {@code hashCode()}.
  * 
- * Tree shape depends on order of insertion Best case: Tree is balanced he shape
- * of the, of the tree could be well in the best case so it would be perfectly
+ * Tree shape depends on order of insertion Best case: Tree is balanced the shape
+ * of the tree could be well in the best case, so it would be perfectly
  * balanced. And one of the things we'll look at is algorithms that come very,
  * very close to achieving that goal. The typical, typical case it'll be sort of
  * balanced. Now but one problem is if the keys come in and, and really
@@ -17,7 +17,7 @@ package com.symboltable;
  * order, that's the worst case. We don't get any benefit from having it in a
  * tree shape. It's no different than a link list.
  * 
- * Many BSTs corresponds to same set of keys Numner of compares for
+ * Many BSTs corresponds to same set of keys Numbers of compares for
  * search/insert is equal to 1+depth of node.
  * 
  * In fact, this correspondence with Quicksort partitioning tells us we can take
@@ -43,7 +43,7 @@ package com.symboltable;
  * Compelexity:
  * ordered iteration is optimal, it just gets them in linear time. 
  * And all the rest of them take time proportional to the height of the tree. Now, 
- * if the, the keys are inserted in random order, we know that height by analysis, 
+ * if, the keys are inserted in random order, we know that height by analysis,
  * is going to be proportional to log N
  */
 import java.util.*;
@@ -134,7 +134,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
         /**
          * we return, x.count, which is the number of nodes in that, in that subtree by
          * definition. The way we maintain, there's a number of ways we can maintain the
-         * thing but the one that we'll adopt un iformly because it adapts to more
+         * thing but the one that we'll adopt un uniformly because it adapts to more
          * complicated situations is just before we're done with the put operation we'll
          * say, okay we've done all our work and before we return the pointer to the
          * given subtree we're going to take the size of what's on the left and the size
