@@ -6,6 +6,8 @@ public class ReverseString {
         if(input.equals("")) {
             return "";
         }
+        System.out.println(input.charAt(0));
+        System.out.println(input.substring(1));
         return reverseString(input.substring(1)) + input.charAt(0);
     }
 
