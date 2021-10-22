@@ -1,0 +1,37 @@
+Observation:
+1) AND
+    When you &1 with any number, the digit remain the same.
+   i) Any AND with 0 its zero 
+2) XOR (^) (if and only if)
+a ^ 1  = a~ (a's compliment)
+a ^ 0   = a
+a ^ a  = 0
+
+Left Shift
+a << 1 = 2a
+
+General point
+a << b  = a*2^b
+
+Right Shift
+------------
+Its move one bit to the Right
+ general point 
+ a >> b = a/2^b
+
+ Odd or Even:
+ Just check last bit , if its 1 is odd othewise even (also call least significant bit)
+
+ Negative of a number is binary form:
+
+ 1 byte = 8 bits
+ Most significant bit is first bit from left: thats tells us whether positive or negative
+  1  = Negative
+  0  = Positive
+Remaining bits represent value of the number
+
+Steps:
+1) compliment of that no.(aka 2s complement)
+2) add +1 to it
+
+

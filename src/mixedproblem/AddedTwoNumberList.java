@@ -79,12 +79,13 @@ public class AddedTwoNumberList {
 
 		Node res = null;
 		Node temp = null;
-		int carry = 0, sum;
+		int reminder = 0;
+		int sum = 0;
 
 		while (first != null || second != null) {
 
-			sum = carry + (first != null ? first.data : 0) + (second != null ? second.data : 0);
-			carry = (sum >= 10) ? 1 : 0; // list contain single digit
+			sum = reminder + (first != null ? first.data : 0) + (second != null ? second.data : 0);
+			reminder = (sum >= 10) ? 1 : 0; // list contain single digit
 			sum = sum % 10;
 
 			temp = new Node(sum);
@@ -104,8 +105,8 @@ public class AddedTwoNumberList {
 			}
 
 		}
-		if (carry > 0) {
-			temp.next = new Node(carry);
+		if (reminder > 0) {
+			temp.next = new Node(reminder);
 		}
 		return res;
 	}
