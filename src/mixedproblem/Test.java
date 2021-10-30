@@ -5,9 +5,20 @@ public class Test {
 	public static void main(String[] args) {
 		int x = 5;
 
-		System.out.println(" " + myfunction(x));
-		System.out.println("Factorial using looping mechanism : " + fact(x));
-
+		// System.out.println(" " + myfunction(x));
+		// System.out.println("Factorial using looping mechanism : " + fact(x));
+		int n = 100;
+		switch(n) {
+			case 1 : {
+				for(int i = 0 ; i < 3; i ++) {
+					System.out.println(i);
+				}
+				break;
+			}
+			default: {
+				System.out.println("Always go to default");
+			}
+		}
 	}
 
 	static int myfunction(int x) {
