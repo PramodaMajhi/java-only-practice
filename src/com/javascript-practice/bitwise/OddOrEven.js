@@ -4,4 +4,4 @@ const oddOrEven = (n) =>  {
 
 }
 
-console.log(oddOrEven(11));
+console.log(oddOrEven(14));

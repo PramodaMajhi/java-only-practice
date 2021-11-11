@@ -47,24 +47,5 @@ a.next = b;
 
 // 5 -> 5 -> 7 -> 7 -> 7 -> 6
 
-// let result = longestStreak(a); // 2
-// console.log(result);
-let  nums = [2,7,11,15];
-var twoSum = function(nums, target) {
-    
-    let map = {}
-    // Key 
-    // value 
-    for(let i=0; i< nums.length; i ++) {
-        
-        let complement  = target - nums[i];
-        
-        if(complement in map) {
-            return [map[complement], i];
-        } else {
-            map[nums[i]] = i;
-        }
-    }
-    
-};
-console.log(twoSum(nums,9));
+let result = longestStreak(a); // 2
+console.log(result);
