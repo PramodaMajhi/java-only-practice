@@ -17,24 +17,24 @@ Explanation: Intervals [1,4] and [4,5] are considered overlapping.
  */
 
 const mergeIntervals = (intervals) => {
-    let sortedIntervals = intervals.sort((a,b) => a[0] - b[0]);
+    let sortedIntervals = intervals.sort((a, b) => a[0] - b[0]);
     //[[0,4],[1,4]];
     let combined = [sortedIntervals[0]];
     for (let i = 1; i < sortedIntervals.length; i++) {
         let currentInterval = sortedIntervals[i];
-        let prevInterval = combined[combined.length -1];
+        let prevInterval = combined[combined.length - 1];
         const [lastStart, lastEnd] = prevInterval;
         const [currentStart, currentEnd] = currentInterval
         if (currentStart <= lastEnd) {
-            if(currentEnd  > lastEnd ) {
+            if (currentEnd > lastEnd) {
                 prevInterval[1] = currentEnd;
-              }
-        }else {
+            }
+        } else {
             combined.push(currentInterval);
         }
     }
     return combined;
 }
 // let intervals = [[1, 4], [4, 5]];
-let intervals = [[1,4],[0,4]];//[[1,3],[2,6],[8,10],[15,18]];
+let intervals = [[1, 4], [0, 4]];//[[1,3],[2,6],[8,10],[15,18]];
 console.log(mergeIntervals(intervals))

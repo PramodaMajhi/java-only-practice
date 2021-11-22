@@ -15,6 +15,20 @@ Observation:
 Observation:
 2^0 = 1
 
+OR 
+a | 1  = 1 
+a | 0  = a 
+
+1 is more powerfull in OR , It convert to the  1. The value remain same for 0
+Bits switch on
+
+AND
+a & 0  = 0
+a & 1 =  a 
+0 is more powerfull , Its convert to 0. The value remain same for 1
+
+Bits switch off
+
 Observation:
 1) AND
     When you &1 with any number, the digit remain the same.
@@ -53,3 +67,5 @@ Steps:
 2) add +1 to it
 
 
+-----------------------------------------------
+Solving coding 
