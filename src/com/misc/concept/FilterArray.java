@@ -1,6 +1,8 @@
 package com.misc.concept;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class FilterArray {
 
@@ -14,6 +16,7 @@ public class FilterArray {
 //			System.out.println(i);
 //		}
 	//Arrays.stream(a).map(mapper)
+
 	}
 
 	 

@@ -16,7 +16,13 @@ import java.util.ArrayList;
  *
  * Bottom line. fast search hit and even faster search miss, but wastes space.
  *
- * 
+ Time Complexity of R-way trie
+	  Search hit (L) ,
+	  search miss (log R N)
+	  insert (L)
+ Space Complexity:
+      Space (R+1)
+
  *Goal: Design a data structure to perform efficient spell checking.
  *	Solution: Build 26-way trie (key=word, value = bit)
  */
@@ -159,7 +165,7 @@ public class TrieST<Value> {
 		}
 		
 		
-		// remove subtrie rooted at x if it is completely empty
+		// remove sub trie rooted at x if it is completely empty
 		if (x.val != null) {
 			return x;
 		}
@@ -209,19 +215,19 @@ public class TrieST<Value> {
 			results.add(prefix.toString());
 		}
 		for (char c = 0; c < R; c++) {
-			System.out.print(c);
+			//System.out.print(c);
 			prefix.append(c);
-			System.out.print(prefix.toString());
-			System.out.println("--> " + x.next[c]);
+			//System.out.print(prefix.toString());
+			//System.out.println("--> " + x.next[c]);
 			collect(x.next[c], prefix, results);
 			prefix.deleteCharAt(prefix.length() - 1);
-			System.out.println(prefix.toString());
+			// System.out.println(prefix.toString());
 		}
 
 	}
 
 	/**
-	 * Returns all of the keys in the symbol table that match 
+	 * Returns all the keys in the symbol table that match
 	 * where '.' is interpreted as wild card 
 	 * character. 
 	 * 
@@ -242,7 +248,9 @@ public class TrieST<Value> {
 
 		if (x == null)
 			return;
+
 		int d = prefix.length();
+
 		if (d == pattern.length() && x.val != null) {
 			results.add(prefix.toString());
 		}
@@ -276,8 +284,8 @@ public class TrieST<Value> {
 		st.put("grape","1");
 		st.put("ape","2");
 		st.put("she","3");
-		st.put("santosh","4");
-		// st.put("ape", "1");
+		st.put("show","4");
+		//st.put("ape", "1");
 		
 //		for(String key: st.keys()) {
 //			System.out.println(key + " " +st.get(key));
@@ -287,9 +295,12 @@ public class TrieST<Value> {
 //		for(String key: st.keys()) {
 //			System.out.println(key + " " +st.get(key));
 //		}
-	
+		System.out.println("keys with prefix");
 		for (String s : st.keysWithPrefix("a"))
             System.out.println(s);
+		System.out.println("Keys that match");
+		for (String s : st.keysThatMatch(".pe"))
+			System.out.println(s);
 	}
 
 }
