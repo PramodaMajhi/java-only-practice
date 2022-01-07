@@ -15,7 +15,8 @@ const longestCommonPrefix = (strs) => {
         // let myVariable = 
         while (strs[i].indexOf(prefix) != 0) {
             prefix = prefix.substring(0, prefix.length - 1);
-            if (prefix == '') return "";
+            if (prefix == '') 
+             return "";
         }
     }
     return prefix;

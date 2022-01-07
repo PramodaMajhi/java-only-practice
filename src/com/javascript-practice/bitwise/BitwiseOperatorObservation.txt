@@ -14,14 +14,14 @@ Observation:
 2^3 = 1/8 = 0.125
 Observation:
 2^0 = 1
-
+// | operator returns 1 if at least one of the operands is 1. Otherwise, it
 OR 
 a | 1  = 1 
 a | 0  = a 
 
 1 is more powerfull in OR , It convert to the  1. The value remain same for 0
 Bits switch on
-
+ // & operator returns 1 if and only if both the operands are 1.
 AND
 a & 0  = 0
 a & 1 =  a 
@@ -33,15 +33,20 @@ Observation:
 1) AND
     When you &1 with any number, the digit remain the same.
    i) Any AND with 0 its zero 
-   
+
+//^  operator returns 1 if and only if one of the operands is 1
 2) XOR (^) (if and only if)
 a ^ 1  = a~ (a's compliment)
 a ^ 0   = a
 a ^ a  = 0
 
+// ~ It changes binary digits 1 to 0 and 0 to 1.
+// It is important to note that the bitwise complement of any integer N is equal to - (N + 1).
+
+
 Left Shift
 a << 1 = 2a
-
+// << operators, shifts all bits towards the left by a certain number of specified bits.
 General point
 a << b  = a*2^b
 

@@ -66,15 +66,15 @@ depthFirstValues(a);
  */
 
 let values = depthFirstValues(a);
-console.log(values);
+//console.log(values);
 
 const depthFirstValueRecurse = (root) =>  {
-    if(root == null)  return [];
-    let result = [];
-    const leftValues = depthFirstValueRecurse(root.left);
-    const rightValues =  depthFirstValueRecurse(root.right);
-    result = [root.val, ...leftValues, ...rightValues];
-    return result;
+    if(root == null)  return []
+    const leftValues = depthFirstValueRecurse(root.left); // [b,d,e]
+   // const rightValues =  depthFirstValueRecurse(root.right); // [c,f]
+   // result = [...leftValues];
+
+    return [root.val, ...leftValues];
 }
 let recurseSol = depthFirstValueRecurse(a);
 console.log(recurseSol);

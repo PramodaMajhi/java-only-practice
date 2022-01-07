@@ -6,23 +6,25 @@ class Node {
   }
   
   const addLists = (head1, head2) => {
-  
-    // if(head1 == null || head1.next== null) {
-    //     return head1;
-    // }
-    // let last = addLists(head1.next);
-    //      head1.next.next = head1;
-    //      head1.next = null;
-    //      return last;
-    let current = head1;
-    let prev = null
-    while(current!=null) {
-        let next = current.next;
-        current.next = prev;
-        prev = current;
-        current = next;
+    let dummyHead = new Node(0);
+    
+    let tail = dummyHead;
+    let current1 = head1;
+    let current2 = head2 ;
+    let sum = 0;
+    let remainder = 0;
+    while(current1!==null || current2!==null || remainder!== 0) {
+      const val1 = current1 === null ? 0 : current1.val;
+      const val2 = current2 === null ? 0 : current2.val;
+      sum = remainder + val1 + val2;
+      remainder = sum >= 10 ? 1 : 0;
+      sum = sum % 10;
+      tail.next = new Node(sum);
+      tail = tail.next;
+      if(current1 !== null) current1 = current1.next;
+      if(current2 !== null) current2 = current2.next;
     }
-    return prev;
+    return dummyHead.next;
   };
 
 //   621

@@ -1,0 +1,39 @@
+How many students total are directly behind you in your "column" of the classroom?
+● You have poor vision, so you can
+see only the people right next to you.
+So, you can't just look back and count.
+● But you are allowed to ask
+questions of the person next to you.
+How can we solve this problem ?
+( recursively ! )
+When they respond with a value N, then
+I will answer N + 1.
+
+Three key Components of a Recursive Algorithm Design:
+1. What is a smaller identical problem(s)?
+    Decomposition 
+2. How are the answers to smaller problems combined to form
+the answer for a larger problem?
+    Composition 
+3. What is the smallest problem which can be solved easily
+(without further decomposition)?
+    Base/stopping case 
+ 
+ --- STACK ---
+• A stack is a special area of memory where access can be made only
+    from one end. You can only access and work with the top of the stack.
+• This is called a Last In First Out ( LIFO ) structure.
+• A stack has two fundamental operations - Push and Pop.
+    The Push operation stores something on the top of the stack and
+    the Pop operation retrieves something from the top of the stack.
+• Calling a method often means putting the parameter values on to the
+    stack, returning from a method is essentially the reverse process.
+    In Java, when a method encounters another method, it gets pushed to the top of the
+    stack and temporarily stops the original method until the new method is completed.
+    Once the method being called finished, the program picks up from where it left off
+
+Important:
+
+Binary Recursion is a process where function is called twice at a time instead
+of once at a time.
+Example: Fibonaci, f(n) = f(n-1) + f(n-2)

@@ -1,13 +1,35 @@
 package com.arrays.practiceproblem;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Array2Practice {
     public static void main(String[] args) {
-        int[] arr = {1, 0, 0, 1};
+        int[] arr = {1, 10, 10, 2};
 
-        System.out.println(Arrays.toString(zeroFront2(arr)));
+        System.out.println(Arrays.toString(withoutTen(arr)));
     }
+/*
+withoutTen([1, 10, 10, 2]) → [1, 2, 0, 0]
+withoutTen([10, 2, 10]) → [2, 0, 0]
+withoutTen([1, 99, 10]) → [1, 99, 0]
+ */
+    public static  int[] withoutTen(int[] nums) {
+        int index = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if(nums[i]!= 10) {
+                int temp = nums[i];
+                nums[i] = nums[index];
+                nums[index] = temp;
+                index ++;
+            } else {
+                nums[i] = 0;
+            }
+        }
+        return nums;
+    }
+
     /*
         zeroFront([1, 0, 0, 1]) → [0, 0, 1, 1]
         zeroFront([0, 1, 1, 0, 1]) → [0, 0, 1, 1, 1]

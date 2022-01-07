@@ -1,5 +1,7 @@
 package com.concept.recursion;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -55,7 +57,7 @@ public class PrintLeafNodes {
     }
 
     public static void main(String args[]) {
-        List<Integer> dataInput = null;// List.of(100, 80, 50, 90, 30, 60, 90, 85, 95, 120, 110, 108, 115, 140, 150);
+        List<Integer> dataInput = new ArrayList<>(Arrays.asList(100, 80, 50, 90, 30, 60, 90, 85, 95, 120, 110, 108, 115, 140, 150));
         Node root = null;
         for (Integer data : dataInput) {
             root = insertNode(root, data);

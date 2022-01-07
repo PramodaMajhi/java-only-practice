@@ -21,14 +21,15 @@ public class ReverseLinkedList {
 
     public static Node reverseList(Node node) {
         if (node == null || node.next == null) {
-            return node;
+            return node; // return 5
         }
         /**
          *  1 -> 2 -> 3 -> 4 -> 5 -> 6
          *  					node <-6 
          */
         Node p = reverseList(node.next);
-        node.next.next = node; // node <- 5 because base is node.next
+        // popped out from call stack
+        node.next.next = node; // node <- 5 because base is node.next, Now 6 pointing to 5
         node.next = null; // remove cyclic dependencies 
         return p; // return head node.
 

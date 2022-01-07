@@ -75,7 +75,7 @@ const groupAnagram = (strs) => {
     let cache = {};
     for (let str of strs) {
         let sortedKey = str.split('').join(''); // aet
-        (!cache[sortedKey]) ? cache[sortedKey] = [str] : cache[sortedKey].push(str);
+     ``   (!cache[sortedKey]) ? cache[sortedKey] = [str] : cache[sortedKey].push(str);
     }
     return Object.values(cache);
 }
