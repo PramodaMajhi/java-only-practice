@@ -6,9 +6,10 @@ import java.util.List;
 
 public class Array2Practice {
     public static void main(String[] args) {
-        int[] arr = {1, 10, 10, 2};
+        int[] arr = {6, 2, 5, 3};
 
-        System.out.println(Arrays.toString(withoutTen(arr)));
+       // System.out.println(Arrays.toString(withoutTen(arr)));
+        System.out.println(Arrays.toString(shiftLeft(arr)));
     }
 /*
 withoutTen([1, 10, 10, 2]) → [1, 2, 0, 0]

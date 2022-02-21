@@ -1,0 +1,20 @@
+Recursion Related Space:
+The recursion related space refers to the memory cost incurred directly by the stack
+to keep track of recursive function calls.
+The system allocates some space in stack to hold following information
+
+1) The returning address of the function call, once the function call is completed, the program must
+know where to return to i.e. the line of the code after the function call
+
+2) The parameters that are passed to the function call
+3) The local variables within the function call
+
+Tail Recursion: Exempted from this space overhead
+Tail recursion where recursive call is the final instruction in the recursive function.
+There should be only one recursive call in the function
+The benefit of tail recursion is that it could avoid the accumulation of stack overheads
+during the recursive calls, since the system could reuse a fixed amount of space in the stack recursive call.
+Tips:
+1) When in doubt, write down the recurrence relationships
+2) Whenever possible apply memoization
+

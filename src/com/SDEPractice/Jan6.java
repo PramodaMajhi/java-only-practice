@@ -26,14 +26,22 @@ public class Jan6 {
         int k = 0;
         int len = nums.length;
         for (int i = 0; i <len; i++) {
-            int a = nums[i];
+            /*int a = nums[i];
             int b = nums[(i+1)%len];
             /*
             Note: An array A rotated by x positions results in an array B
             of the same length such that A[i] == B[(i+x) % A.length],
             where % is the modulo operation.
              */
-            if (nums[i] > nums[(i + 1) % len]) {
+//            if (nums[i] > nums[(i + 1) % len]) {
+//                k++;
+//            }
+            int a = nums[i];
+            int b;
+            if(i == nums.length-1) {
+                b = nums[0];
+            } else b = nums[i+1];
+            if(a > b) {
                 k++;
             }
         }

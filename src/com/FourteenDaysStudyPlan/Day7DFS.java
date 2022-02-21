@@ -55,11 +55,15 @@ public class Day7DFS {
     }
 
     private static int dfs(int[][]grid, int row, int col, boolean[][] visited) {
-        if(row < 0 || col < 0 ||
-                row >= grid.length ||
-                col >=grid[0].length ||
-                grid[row][col]!= 1 ||
-                visited[row][col]) return 0;
+        if(     row < 0
+                || col < 0
+                || row >= grid.length
+                || col >=grid[0].length
+                || grid[row][col]!= 1
+                || visited[row][col])
+        {
+            return 0;
+        }
         visited[row][col] = true;
         int count = 1;
             count+= dfs(grid, row-1, col, visited);
