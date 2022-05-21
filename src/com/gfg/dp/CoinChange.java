@@ -1,7 +1,6 @@
 package com.gfg.dp;
 
 public class CoinChange {
-
     public static void main(String[] args) {
         int[]coins = {2,5,3,6};
         int sum = 10;
@@ -9,7 +8,18 @@ public class CoinChange {
         System.out.println(getCountDp(coins, sum));
     }
 
-
+    /**
+     To count the total number of solutions,
+     we can divide all set solutions into two sets.
+     1) Solutions that do not contain mth coin (or Sm).
+     2) Solutions that contain at least one Sm.
+     Let count(S[], m, n) be the function to count the number of solutions,
+     then it can be written as sum of count(S[], m-1, n) and count(S[], m, n-Sm).
+     Therefore, the problem has optimal substructure property
+     as the problem can be solved using solutions to subproblems.
+     */
+    //Time complexity of this function: O(mn)
+    //Space Complexity of this function: O(n)
     public static int getCountDp(int[] coins, int sum) {
         int n = coins.length;
         int dp[][] = new int[sum+1][n+1];
@@ -52,15 +62,17 @@ public class CoinChange {
 
         // if sum is 0 then there is 1 solution
         // do not include any coin
-        if(sum == 0) return 1;
-
+        if(sum == 0)
+            return 1;
         // if sum < 0 then there is no solution exits
-        if(sum < 0) return 0;
+        if(sum < 0)
+            return 0;
         // if there are no coin and sum is greater than 0
         // then no solution exist
-        if(len<=0 && sum >= 1) return 0;
+        if(len<=0 && sum >= 1)
+            return 0;
            return helper(coins, len - 1, sum)+ // does not exclude
-                     helper(coins, len, sum - coins[len-1]); // include
+                   helper(coins, len, sum - coins[len-1]); // include
     }
 
 }

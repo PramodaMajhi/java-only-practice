@@ -25,7 +25,7 @@ Bits switch on
 AND
 a & 0  = 0
 a & 1 =  a 
-0 is more powerfull , Its convert to 0. The value remain same for 1
+0 is more powerful , Its convert to 0. The value remain same for 1
 
 Bits switch off
 
@@ -40,8 +40,31 @@ a ^ 1  = a~ (a's compliment)
 a ^ 0   = a
 a ^ a  = 0
 
+The bitwise complement operator should be used carefully.
+The result of ~ operator on a small number can be a big number
+if the result is stored in an unsigned variable. And the result
+may be a negative number if the result is stored in a signed
+variable (assuming that the negative numbers are stored in 2’s
+complement form where the leftmost bit is the sign bit).
+
+The negative numbers are stored as the two’s complement of the positive counterpart.
+Bitwise complement Operation of 2 (~ 0010 ): 1101
+
+Example:
+Calculate 2’s complement of 3:
+Binary form of 3 = 0011
+1’s Complement of 3 = 1100
+Adding 1 to 1’s complement = 1100 +1
+2’s complement of 3 = 1101
+
+Note:
+The bitwise Complement of 2 is same as  the binary representation of -3
+
 // ~ It changes binary digits 1 to 0 and 0 to 1.
-// It is important to note that the bitwise complement of any integer N is equal to - (N + 1).
+// It is important to note that the bitwise complement of any integer N is equal to -(N + 1).
+1) For any integer n, the bitwise complement of n will be -(n+1).
+2) Bitwise complement of N = ~N (represented in 2’s complement form).
+3) 2’complement of ~N= -(~(~N)+1) = -(N+1).
 
 
 Left Shift

@@ -35,7 +35,8 @@ public class LongestCommonSubsequence {
     }
 
     private static int helperDp(String s1, String s2, int m, int n, int memo[][]) {
-        if (memo[m][n] != -1) return memo[m][n];
+        if (memo[m][n] != -1)
+            return memo[m][n];
         if (m == 0 || n == 0) {
             return memo[m][n] = 0;
         }

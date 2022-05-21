@@ -26,7 +26,7 @@ const subsets = (arr) => {
     // const subsetsWithFirst  = [];
     
     // for(let sub of subsetsWithoutFirst) {
-    //     subsetsWithFirst.push([first, ...sub]); // including each element with first elemenet.
+    //     subsetsWithFirst.push([first, ...sub]); // including each element with first element.
     // }
     return[...subsetsWithoutFirst, ... subsetsWithElement];
    

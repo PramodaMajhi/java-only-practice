@@ -1,22 +1,25 @@
 package com.gfg;
 
 import java.math.BigInteger;
+import java.util.Arrays;
 
 public class Test {
     public static void main(String[] args) {
-        BigInteger a = new BigInteger("12");
-        BigInteger c = a.add(new BigInteger("10"));
-       // System.out.println(c);
-        System.out.println(factorial(3));
+        int[] arr = {1, 2, 3, 4};
+        System.out.println(brokenCalc(5,8));
     }
-
-    private static BigInteger factorial(int n) {
-
-        BigInteger f = new BigInteger("1");
-        for (int i = 2; i <=n ; i++) {
-            BigInteger x = BigInteger.valueOf(i);
-            f = f.multiply(x);
+    public static int brokenCalc(int startValue, int target) {
+        int steps = 0;
+        while(startValue!=target){
+            if(startValue < target) {
+                startValue = startValue * 2;
+                steps++;
+            }else {
+                startValue--;
+                steps++;
+            }
         }
-        return f;
+
+        return steps;
     }
 }

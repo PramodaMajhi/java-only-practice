@@ -4,8 +4,9 @@ import java.util.*;
 
 public class Feb6 {
     public static void main(String[] args) {
-        int []nums = {1,3,5,3};
-        System.out.println(findLonely(nums));
+        int []nums = {2,3,1,1,4};
+        System.out.println(canJump(nums));
+
     }
 
     /*

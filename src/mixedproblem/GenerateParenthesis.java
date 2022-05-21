@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+ * Given n pairs of parentheses, write a function to generate
+ * all combinations of well-formed parentheses.
 
 For example, given n = 3, a solution set is:
 
@@ -21,7 +22,7 @@ For example, given n = 3, a solution set is:
 public class GenerateParenthesis {
 
 	public static void main(String[] args) {
-		List<String> res = generateParenthesis(4);
+		List<String> res = generateParenthesis(3);
 		for (String s : res) {
 			System.out.println(s);
 		}

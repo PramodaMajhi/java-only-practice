@@ -7,7 +7,8 @@ import java.util.Arrays;
  * so that we can have all operations O(1) time.
  * We have added new variable called front and initialized to 0
  * We don't need any variable for rear, we will get hold of rear by
- * simple formula : rear = (front + size -1) % capacity
+ * simple formula :
+   rear = ((front + size -1) % capacity)
  *
  */
  public class DequeArray {
@@ -59,7 +60,7 @@ Complexity O(n)
      */
     public void deleteFront(){
         // [10, 20, 0, 0, 0] - Initial
-        // [20, 0, 0, 0,0] - final
+        // [20, 0, 0, 0, 0] - final
         if(isEmpty()) return;
 //        for (int i = 0; i < size-1; i++) {
 //            arr[i] = arr[i+1];

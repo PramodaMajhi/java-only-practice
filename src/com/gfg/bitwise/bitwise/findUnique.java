@@ -9,8 +9,8 @@ import java.util.*;
  */
 public class findUnique {
     public static void main(String[] args) {
-        int []arr = {1,1,2,2,3};
-        System.out.println(singleNumberMath(arr));
+        int []arr = {1,3,2,2,3};
+        System.out.println(ans(arr));
     }
 
     /**

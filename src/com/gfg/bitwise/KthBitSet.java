@@ -1,4 +1,4 @@
-package com.gfg.pq.bitwise;
+package com.gfg.bitwise;
 
 public class KthBitSet {
 

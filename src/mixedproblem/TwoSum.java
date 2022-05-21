@@ -19,8 +19,7 @@ public class TwoSum {
 	 */
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		// TODO Auto-generated method stub s
 		int nums[] = { 4, 5, 3, 7, 9, -5 };
 		// Arrays.sort(nums);
 		// int indexArr[] = twoSumHashMap(nums, 9);
