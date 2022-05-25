@@ -21,7 +21,6 @@ public class LowerBound {
         return lower_bound;
     }
     public int lower_bound_binarySearch(int[] arr, int element) {
-
         int low = 0, high = arr.length;
         int mid;
         while (low < high){
