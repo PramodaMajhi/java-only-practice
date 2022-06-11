@@ -6,7 +6,7 @@ public class SecondLargest {
         System.out.println(secondLargest(arr));
     }
 /*
-    IDEA: Create two variables for indexs, initialize as follows
+    IDEA: Create two variables for indexes, initialize as follows
     One for res = -1, largest  = 0 (first element)
     Start looping through from second element and compare with first element
     if yes, then res = largest and lartest = i

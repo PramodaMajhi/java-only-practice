@@ -4,13 +4,16 @@ import java.util.Arrays;
 
 public class TransposeMatrix {
     public static void main(String[] args) {
-        int [][] matrix = {
-                {1, 2, 3, 4},
-                {5, 6, 7, 8},
-                {9,10,11,12},
-                {13,14,15,16}
-        };
-        TransposeMatrix(matrix);
+//        int [][] matrix = {
+//                {1, 2, 3, 4},
+//                {5, 6, 7, 8},
+//                {9,10,11,12},
+//                {13,14,15,16}
+//        };
+        int[][]matrix = {{1,2,3},
+                         {4,5,6}
+                        };
+        //TransposeMatrix(matrix);
         System.out.println(Arrays.deepToString(transposeEfficient(matrix)));
     }
 
@@ -18,12 +21,13 @@ public class TransposeMatrix {
       Transpose Efficient
       IDEA: will swap the upper half  with lower half elements
       without touching diagonal elements
+      Note: when row and column length are different, it won't work.
      */
     public static int[][] transposeEfficient(int[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;
         for (int i = 0; i<m ; i++) {
-            for (int j = i+1; j<n ; j++) {
+            for (int j = i+1; j<n-1 ; j++) {
                 swap(matrix, i,j);
             }
         }
