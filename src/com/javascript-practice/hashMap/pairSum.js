@@ -1,6 +1,8 @@
 /**
  * pair sum
-Write a function, pairSum, that takes in an array and a target sum as arguments. The function should return an array containing a pair of indices whose elements sum to the given target. The indices returned must be unique.
+Write a function, pairSum, that takes in an array and a target sum as arguments. 
+The function should return an array containing a pair of indices whose elements sum to the given target. 
+The indices returned must be unique.
 
 Be sure to return the indices, not the elements themselves.
 
@@ -19,7 +21,8 @@ const pairSum = (numbers, targetSum) => {
     for (let index = 0; index < numbers.length; index++) {
         const num = numbers[index];
         const complement = targetSum - num;
-        if (complement in previousNums) return [previousNums[complement], index];
+        if (complement in previousNums) 
+            return [previousNums[complement], index];
         previousNums[num] = index;
 
     }

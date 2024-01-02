@@ -73,7 +73,7 @@ public class LongestSubstringNoRepeat {
         return max;
     }
     public static void main(String[] args) {
-        String s =  "pwwkew"; //"abcabcbb";
+        String s =  "abcabcbb"; // "pwwkew"; //
         // Output: 3
         LongestSubstringNoRepeat repeat = new LongestSubstringNoRepeat();
         int ans = repeat.lengthOfLongestSubstringBF(s);

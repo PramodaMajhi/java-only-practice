@@ -1,7 +1,5 @@
 package com.arrays.string.chapter1;
 
-import javafx.beans.binding.StringBinding;
-
 /**
  * Insert all the words one by one in the trie, after inserting we perform walk on the trie
  * In this walk, we will go deeper until we found a

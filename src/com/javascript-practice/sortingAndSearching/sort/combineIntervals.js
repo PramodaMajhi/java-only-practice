@@ -2,7 +2,9 @@
  * 
  * @param {*} intervals 
  * combine intervals
-Write a function, combineIntervals, that takes in an array of intervals as an argument. Each interval is an array containing a pair of numbers representing a start and end time. Your function should combine overlapping intervals and return an array containing the combined intervals.
+Write a function, combineIntervals, that takes in an array of intervals as an argument. 
+Each interval is an array containing a pair of numbers representing a start and end time. 
+Your function should combine overlapping intervals and return an array containing the combined intervals.
 
 For example:
 

@@ -25,9 +25,9 @@ public class ReverseLinkListUsingRecursion {
         Node lastNode  = reverse(head.next);
         head.next.next = head;
         head.next = null;
-
         return lastNode;
     }
+
 
     public static void main(String[] args) {
         Node  n1 = new Node(1);

@@ -141,8 +141,6 @@ public class SequentialSearchST<Key, Value> {
 		for(Integer a : st.keys()) {
 			System.out.println(a + " " + st.get(a));
 		}
-		
-		
 
 	}
 

@@ -7,8 +7,11 @@ isPrime = (n) => {
     if (n < 2) {
         return false;
     }
-    for (let i = 2; i <= Math.sqrt(n); i++) {
+    let upto = Math.sqrt(n);
+    for (let i = 2; i <= upto; i++) {
         if (n % i == 0) return false;
     }
     return true;
 };
+
+console.log('Output is ->    '+ isPrime(7));

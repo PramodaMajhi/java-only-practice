@@ -8,6 +8,8 @@ public class Test {
         int[] arr = {1, 2, 3, 4};
         System.out.println(brokenCalc(5,8));
     }
+
+    
     public static int brokenCalc(int startValue, int target) {
         int steps = 0;
         while(startValue!=target){

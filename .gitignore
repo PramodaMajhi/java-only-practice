@@ -1,2 +1,6 @@
 *.DS_Store
 /bin
+*.xml
+*.classpath
+*.iml
+*.json
